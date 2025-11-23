@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Your Product Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Flask static CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page-shell">
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-mark">
+          <!-- Replace with your initials or logo letter -->
+          <img 
+            src="{{ url_for('static', filename='logo_avince_purple.png') }}"
+            alt="Avince logo"
+            class="logo-img"
+          >
+        </div>
+        <div class="logo-text">
+          <div class="logo-text-main">
+            <!-- COMPANY NAME -->
+            AVINCE
+          </div>
+          <div class="logo-text-sub">
+            <!-- SMALL TAGLINE -->
+            Creating immersive experiences.
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-cta">
+        <div class="nav-pill">
+          <span class="nav-pill-dot"></span>
+          Live in under 5 minutes
+        </div>
+        <button class="nav-button">
+          Get started
+        </button>
+      </div>
+    </header>
+
+        <!-- HERO WITH BACKGROUND IMAGE -->
+    <main class="main-grid">
+    <!-- Background image layer -->
+    <div class="hero-bg" aria-hidden="true">
+        <img
+        src="{{ url_for('static', filename='vr-hero.png') }}"
+        alt=""
+        class="hero-bg-image"
+        >
+        <div class="hero-bg-gradient"></div>
+        <div class="hero-spotlight"></div>
+    </div>
+
+    <!-- Foreground content (your existing hero text) -->
+    <section class="hero">
+        <div class="hero-pill">
+        <span class="hero-pill-label">New</span>
+        Be the first one to spatialize your event
+        </div>
+
+        <h1 class="hero-heading">
+        <span class="hero-heading-main">
+            Future of Immersive
+        </span>
+        <span class="hero-heading-accent">
+            Entertainment
+        </span>
+        </h1>
+
+        <p class="hero-subtitle">
+        A platform engineered for the <strong>next generation</strong> of clubs,
+        festivals, event organizers, DJs, and producers.
+        </p>
+
+        <div class="hero-actions">
+        <button class="hero-main-cta">
+            <span>Join the waitlist</span>
+            <span class="icon">↗</span>
+        </button>
+
+        <button class="hero-secondary-cta">
+            <span class="hero-secondary-cta-dot"></span>
+            <span>Contact for more information</span>
+        </button>
+        </div>
+
+        <div class="hero-metadata">
+        <div class="hero-metadata-item">
+            <span class="hero-metadata-dot"></span>
+            No credit card required
+        </div>
+        <div class="hero-metadata-item">
+            <span class="hero-metadata-dot"></span>
+            SOC2-ready infrastructure
+        </div>
+        </div>
+    </section>
+    </main>
+
+
+    <!-- Partners section -->
+    <section class="partners-strip" id="partners">
+        <div class="partners-label">
+            SELECTED PARTNERS & VENUES
+        </div>
+
+        <div class="partners-row">
+            <img
+            src="{{ url_for('static', filename='apple_logo_2.png') }}"
+            alt="Apple"
+            class="partner-logo"
+            >
+            <img
+            src="{{ url_for('static', filename='coming_soon.webp') }}"
+            alt="Partner 2"
+            class="partner-logo"
+            >
+            <img
+            src="{{ url_for('static', filename='coming_soon.webp') }}"
+            alt="Partner 3"
+            class="partner-logo"
+            >
+            <img
+            src="{{ url_for('static', filename='coming_soon.webp') }}"
+            alt="Partner 4"
+            class="partner-logo"
+            >
+            <img
+            src="{{ url_for('static', filename='coming_soon.webp') }}"
+            alt="Partner 5"
+            class="partner-logo"
+            >
+            <img
+            src="{{ url_for('static', filename='coming_soon.webp') }}"
+            alt="Partner 6"
+            class="partner-logo"
+            >
+        </div>
+    </section>
+
+    <!-- BOTTOM FEATURE GRID -->
+    <section class="bottom-section" id="how-it-works">
+      <div class="bottom-header">
+        <div class="bottom-eyebrow">
+          Ship production-ready flows, not one-off demos
+        </div>
+        <h2 class="bottom-title">
+          From first prompt to live workflow in under an afternoon.
+        </h2>
+        <p class="bottom-subtitle">
+          Connect your stack, define the steps, and let our orchestrator handle
+          retries, logging, and monitoring. No more “works only on my laptop”
+          prototypes.
+        </p>
+      </div>
+
+      <div class="bottom-grid">
+        <article class="feature-card">
+          <div class="feature-card-label">Step 1</div>
+          <h3 class="feature-card-title">
+            Map your real-world process
+          </h3>
+          <p class="feature-card-body">
+            Start from a blank canvas or a template. Describe your use case in
+            plain language and we generate the first version for you.
+          </p>
+          <div class="feature-card-tag">
+            AI-assisted setup
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card-label">Step 2</div>
+          <h3 class="feature-card-title">
+            Plug in your tools & data
+          </h3>
+          <p class="feature-card-body">
+            Connect CRM, ticketing, internal APIs, and more. Configure each
+            step with guardrails, validations, and fallbacks.
+          </p>
+          <div class="feature-card-tag">
+            Works with your stack
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card-label">Step 3</div>
+          <h3 class="feature-card-title">
+            Test, iterate, then go live
+          </h3>
+          <p class="feature-card-body">
+            Replay real events, inspect each token, and tweak prompts safely
+            before sending traffic to production.
+          </p>
+          <div class="feature-card-tag">
+            Built-in observability
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card-label">Step 4</div>
+          <h3 class="feature-card-title">
+            Keep everything under control
+          </h3>
+          <p class="feature-card-body">
+            Set rate limits, define owners, and export logs. Stay compliant
+            while your automation runs quietly in the background.
+          </p>
+          <div class="feature-card-tag">
+            Enterprise-ready
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="contact">
+        <img
+            src="{{ url_for('static', filename='ribbon.png') }}"
+            alt=""
+            class="final-cta-ribbon ribbon-left"
+            aria-hidden="true"
+        >
+        <img
+            src="{{ url_for('static', filename='ribbon.png') }}"
+            alt=""
+            class="final-cta-ribbon ribbon-left2"
+            aria-hidden="true"
+        >
+        <img
+            src="{{ url_for('static', filename='ribbon.png') }}"
+            alt=""
+            class="final-cta-ribbon ribbon-right"
+            aria-hidden="true"
+        >
+        <img
+            src="{{ url_for('static', filename='ribbon.png') }}"
+            alt=""
+            class="final-cta-ribbon ribbon-right2"
+            aria-hidden="true"
+        >
+
+    <div class="final-cta-inner">
+        <h2 class="final-cta-title">
+            <span class="final-cta-title-gradient">
+                Ready to light up your event?
+            </span>
+        </h2>
+
+        <p class="final-cta-subtitle">
+        Power your venue with futuristic tech and legendary vibes. We’re onboarding a limited number of flagship clubs, festivals, and event
+        spaces. Tell us about your venue and we’ll help you design a launch that
+        feels truly immersive.
+        </p>
+
+        <div class="final-cta-actions">
+        <button class="final-cta-primary">
+            <span>Request information</span>
+            <span class="final-cta-icon">↗</span>
+        </button>
+
+        <button class="final-cta-secondary">
+            View demo
+        </button>
+        </div>
+
+        <div class="final-cta-meta">
+        <span class="final-cta-dot"></span>
+        <span>Based in San Francisco &amp; Costa Brava · Available worldwide</span>
+        </div>
+    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+    <div class="footer-left">
+        © 2025 Avince
+    </div>
+    <div class="footer-right">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+    </div>
+    </footer>
+
+
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hero = document.querySelector(".main-grid");
+    if (!hero) return;
+
+    const spotlight = hero.querySelector(".hero-spotlight");
+    if (!spotlight) return;
+
+    // Respect users who prefer reduced motion
+    const prefersReducedMotion =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const hasFinePointer =
+      window.matchMedia &&
+      window.matchMedia("(pointer: fine)").matches;
+
+    // Only enable on desktop / precise pointer and if motion is ok
+    if (prefersReducedMotion || !hasFinePointer) return;
+
+    hero.addEventListener("mousemove", function (event) {
+      const rect = hero.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      // Show spotlight
+      spotlight.style.opacity = "1";
+
+      // Move the "light" to the cursor position
+      spotlight.style.background = `
+        radial-gradient(
+          circle at ${x}px ${y}px,
+          rgba(244, 114, 182, 0.32) 0%,
+          rgba(168, 85, 247, 0.18) 18%,
+          rgba(15, 23, 42, 0.0) 40%
+        )
+      `;
+    });
+
+    hero.addEventListener("mouseleave", function () {
+      // Fade out when leaving the hero
+      spotlight.style.opacity = "0";
+    });
+  });
+</script>
+
+
+</body>
+</html>

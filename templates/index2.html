@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Your Product Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-start: #020617;
+      --bg-end: #020617;
+      --card-bg: rgba(15, 23, 42, 0.9);
+      --card-border: rgba(148, 163, 184, 0.25);
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.12);
+      --accent-strong: rgba(34, 197, 94, 0.25);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-soft: #6b7280;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.75);
+      --radius-xl: 1.75rem;
+      --radius-lg: 1.25rem;
+      --radius-full: 999px;
+      --nav-height: 72px;
+      --content-max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, #0f172a 0, transparent 55%),
+        radial-gradient(circle at bottom right, #22c55e22 0, transparent 55%),
+        linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      padding: 24px 16px;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: var(--content-max-width);
+      border-radius: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: radial-gradient(circle at top, #020617, #020617f5);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 22px 24px;
+      backdrop-filter: blur(20px);
+    }
+
+    @media (min-width: 1024px) {
+      .page-shell {
+        padding: 24px 28px 28px;
+      }
+    }
+
+    /* NAVBAR */
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 10px 18px;
+      margin-bottom: 22px;
+      background: radial-gradient(circle at top left, #0b1120, #020617f2);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 40%;
+      background: radial-gradient(circle at 30% 20%, #bbf7d0, #22c55e);
+      box-shadow:
+        0 0 0 1px rgba(34, 197, 94, 0.8),
+        0 0 24px rgba(34, 197, 94, 0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: #020617;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .logo-text-main {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(148, 163, 184, 0.75);
+      color: #e5e7eb;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .nav-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.3);
+    }
+
+    .nav-button {
+      border-radius: 999px;
+      padding: 7px 16px;
+      border: none;
+      outline: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      box-shadow:
+        0 16px 40px rgba(22, 163, 74, 0.65),
+        0 0 0 1px rgba(22, 163, 74, 0.6);
+      white-space: nowrap;
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .nav-button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow:
+        0 20px 55px rgba(22, 163, 74, 0.8),
+        0 0 0 1px rgba(34, 197, 94, 0.7);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    /* MAIN GRID */
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.13fr) minmax(0, 0.87fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      .main-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* LEFT: HERO TEXT */
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at left, #22c55e24, #020617);
+      font-size: 11px;
+      color: var(--text-muted);
+      width: fit-content;
+    }
+
+    .hero-pill-label {
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.16);
+      color: #bbf7d0;
+      font-weight: 500;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-heading {
+      font-size: clamp(2.4rem, 3vw + 1rem, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-heading-main {
+      font-weight: 700;
+    }
+
+    .hero-heading-accent {
+      font-weight: 700;
+      background: linear-gradient(135deg, #bbf7d0, #4ade80);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin-top: 6px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 480px;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .hero-main-cta {
+      border-radius: 999px;
+      padding: 11px 22px;
+      border: none;
+      outline: none;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow:
+        0 20px 60px rgba(22, 163, 74, 0.85),
+        0 0 0 1px rgba(34, 197, 94, 0.7);
+      transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        filter 0.16s ease;
+    }
+
+    .hero-main-cta span.icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transform: translateY(1px);
+    }
+
+    .hero-main-cta:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+      box-shadow:
+        0 24px 72px rgba(22, 163, 74, 0.92),
+        0 0 0 1px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-secondary-cta {
+      border-radius: 999px;
+      padding: 10px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition:
+        border-color 0.18s ease,
+        color 0.18s ease,
+        background 0.18s ease;
+    }
+
+    .hero-secondary-cta-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at center, #bbf7d0, #22c55e);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+    }
+
+    .hero-secondary-cta:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .hero-metadata {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-metadata-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .hero-metadata-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.85);
+    }
+
+    /* FEATURE STRIP */
+
+    .feature-strip {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(55, 65, 81, 0.8);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .feature-strip-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+
+    .feature-strip-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .feature-pill {
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      color: var(--text-muted);
+    }
+
+    .feature-pill strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* RIGHT: VISUAL CARD */
+
+    .visual-card-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-card {
+      position: relative;
+      width: 100%;
+      max-width: 430px;
+      padding: 20px 18px 18px;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top left, #020617, #020617f0);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow:
+        0 24px 90px rgba(15, 23, 42, 0.95),
+        0 0 0 1px rgba(15, 23, 42, 0.95);
+      overflow: hidden;
+    }
+
+    .visual-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 10px;
+    }
+
+    .visual-card-tabs {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      gap: 2px;
+      font-size: 11px;
+    }
+
+    .visual-card-tab {
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: var(--text-soft);
+      cursor: pointer;
+      transition:
+        background 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .visual-card-tab.is-active {
+      background: rgba(34, 197, 94, 0.16);
+      color: #bbf7d0;
+    }
+
+    .visual-card-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(51, 65, 85, 0.95);
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .visual-card-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #bbf7d0, #22c55e);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.65);
+    }
+
+    .visual-main {
+      border-radius: var(--radius-lg);
+      padding: 14px 13px 13px;
+      background:
+        radial-gradient(circle at top left, #22c55e22, transparent 55%),
+        radial-gradient(circle at bottom right, #0f172a, #020617);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 520px) {
+      .visual-main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .visual-avatar-stack {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #e5e7eb, #64748b);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
+      margin-left: -7px;
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .avatar-labels {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .avatar-labels-main {
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+
+    .avatar-labels-sub {
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .visual-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .stat-card {
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(51, 65, 85, 0.95);
+      padding: 8px 9px;
+      display: grid;
+      gap: 3px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .stat-value {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .stat-tag {
+      margin-top: 4px;
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.14);
+      color: #bbf7d0;
+      width: fit-content;
+    }
+
+    .visual-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 6px 8px;
+      border-radius: 0.75rem;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(51, 65, 85, 0.96);
+    }
+
+    .timeline-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .timeline-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at center, #fde68a, #f59e0b);
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.65);
+    }
+
+    .timeline-value {
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+
+    .visual-orbit {
+      position: absolute;
+      inset: -40%;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.08);
+      pointer-events: none;
+    }
+
+    .visual-orbit:nth-child(2) {
+      transform: scale(0.75);
+      border-color: rgba(34, 197, 94, 0.18);
+    }
+
+    .visual-glow {
+      position: absolute;
+      inset: auto auto -36% 50%;
+      width: 260px;
+      height: 260px;
+      transform: translateX(-50%);
+      background:
+        radial-gradient(circle at top, rgba(34, 197, 94, 0.22), transparent 60%),
+        radial-gradient(circle at bottom, rgba(15, 23, 42, 0.95), transparent 60%);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    /* BOTTOM FEATURE GRID */
+
+    .bottom-section {
+      margin-top: 26px;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top left, #020617, #020617);
+      padding: 16px 16px 14px;
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .bottom-section {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+        align-items: center;
+      }
+    }
+
+    .bottom-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .bottom-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+    .bottom-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .bottom-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      max-width: 360px;
+      margin-top: 2px;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .feature-card {
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      padding: 10px 11px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .feature-card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+    }
+
+    .feature-card-title {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .feature-card-body {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .feature-card-tag {
+      margin-top: 4px;
+      font-size: 10px;
+      padding: 3px 6px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.14);
+      color: #bbf7d0;
+      width: fit-content;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-mark">
+          <!-- Replace with your initials or logo letter -->
+          Y
+        </div>
+        <div class="logo-text">
+          <div class="logo-text-main">
+            <!-- COMPANY NAME -->
+            YourProduct
+          </div>
+          <div class="logo-text-sub">
+            <!-- SMALL TAGLINE -->
+            Smart automation for busy teams
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-cta">
+        <div class="nav-pill">
+          <span class="nav-pill-dot"></span>
+          Live in under 5 minutes
+        </div>
+        <button class="nav-button">
+          Get started
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT GRID -->
+    <main class="main-grid">
+      <!-- LEFT: HERO COPY -->
+      <section class="hero">
+        <div class="hero-pill">
+          <span class="hero-pill-label">New</span>
+          <!-- SMALL TOP TEXT -->
+          Launch your next AI-powered workflow in minutes
+        </div>
+
+        <h1 class="hero-heading">
+          <span class="hero-heading-main">
+            <!-- MAIN TITLE LINE 1 -->
+            Build smarter,
+          </span>
+          <span class="hero-heading-accent">
+            <!-- MAIN TITLE LINE 2 (ACCENT) -->
+            not harder.
+          </span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <!-- SHORT DESCRIPTION -->
+          Turn messy processes into <strong>clean, automated workflows</strong>.
+          Connect your tools, orchestrate AI, and ship production-ready flows
+          without fighting your infrastructure.
+        </p>
+
+        <div class="hero-actions">
+          <button class="hero-main-cta">
+            <span>Start free workspace</span>
+            <span class="icon">↗</span>
+          </button>
+
+          <button class="hero-secondary-cta">
+            <span class="hero-secondary-cta-dot"></span>
+            <span>Watch 2-minute overview</span>
+          </button>
+        </div>
+
+        <div class="hero-metadata">
+          <div class="hero-metadata-item">
+            <span class="hero-metadata-dot"></span>
+            No credit card required
+          </div>
+          <div class="hero-metadata-item">
+            <span class="hero-metadata-dot"></span>
+            SOC2-ready infrastructure
+          </div>
+        </div>
+
+        <div class="feature-strip" id="features">
+          <div class="feature-strip-label">
+            Trusted for fast experiments & launches
+          </div>
+          <div class="feature-strip-items">
+            <div class="feature-pill">
+              <strong>+70%</strong> faster from idea to prototype
+            </div>
+            <div class="feature-pill">
+              <strong>&lt;10 min</strong> to wire up a new flow
+            </div>
+            <div class="feature-pill">
+              <strong>1-click</strong> deploy to production
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: VISUAL / MOCKUP -->
+      <section class="visual-card-wrap" aria-label="Product preview">
+        <div class="visual-card">
+          <div class="visual-orbit"></div>
+          <div class="visual-orbit"></div>
+          <div class="visual-glow"></div>
+
+          <div class="visual-card-header">
+            <div class="visual-card-tabs">
+              <div class="visual-card-tab is-active">Workflow overview</div>
+              <div class="visual-card-tab">Run history</div>
+              <div class="visual-card-tab">Prompts</div>
+            </div>
+
+            <div class="visual-card-status">
+              <span class="visual-card-status-dot"></span>
+              <span>Live · 12 runs / min</span>
+            </div>
+          </div>
+
+          <div class="visual-main">
+            <div>
+              <div class="visual-avatar-stack">
+                <div class="avatar-row">
+                  <div class="avatar"></div>
+                  <div class="avatar"></div>
+                  <div class="avatar"></div>
+                </div>
+                <div class="avatar-labels">
+                  <div class="avatar-labels-main">
+                    New signup → Qualify → Route
+                  </div>
+                  <div class="avatar-labels-sub">
+                    AI triages each incoming lead in real time
+                  </div>
+                </div>
+              </div>
+
+              <div class="visual-stats">
+                <div class="stat-card">
+                  <div class="stat-label">Median response time</div>
+                  <div class="stat-value">1.3s</div>
+                  <div class="stat-tag">-63% vs. last week</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">Leads auto-qualified</div>
+                  <div class="stat-value">92%</div>
+                  <div class="stat-tag">LLM-backed scoring</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-timeline">
+              <div class="timeline-row">
+                <div class="timeline-label">
+                  <span class="timeline-dot"></span>
+                  <span>Webhook: new signup</span>
+                </div>
+                <div class="timeline-value">0.2s</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label">
+                  <span class="timeline-dot"></span>
+                  <span>LLM: qualify & segment</span>
+                </div>
+                <div class="timeline-value">0.8s</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label">
+                  <span class="timeline-dot"></span>
+                  <span>Action: create CRM record</span>
+                </div>
+                <div class="timeline-value">0.3s</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label">
+                  <span class="timeline-dot"></span>
+                  <span>Branch: route to owner</span>
+                </div>
+                <div class="timeline-value">0.0s</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- BOTTOM FEATURE GRID -->
+    <section class="bottom-section" id="how-it-works">
+      <div class="bottom-header">
+        <div class="bottom-eyebrow">
+          Ship production-ready flows, not one-off demos
+        </div>
+        <h2 class="bottom-title">
+          From first prompt to live workflow in under an afternoon.
+        </h2>
+        <p class="bottom-subtitle">
+          Connect your stack, define the steps, and let our orchestrator handle
+          retries, logging, and monitoring. No more “works only on my laptop”
+          prototypes.
+        </p>
+      </div>
+
+      <div class="bottom-grid">
+        <article class="feature-card">
+          <div class="feature-card-label">Step 1</div>
+          <h3 class="feature-card-title">
+            Map your real-world process
+          </h3>
+          <p class="feature-card-body">
+            Start from a blank canvas or a template. Describe your use case in
+            plain language and we generate the first version for you.
+          </p>
+          <div class="feature-card-tag">
+            AI-assisted setup
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card-label">Step 2</div>
+          <h3 class="feature-card-title">
+            Plug in your tools & data
+          </h3>
+          <p class="feature-card-body">
+            Connect CRM, ticketing, internal APIs, and more. Configure each
+            step with guardrails, validations, and fallbacks.
+          </p>
+          <div class="feature-card-tag">
+            Works with your stack
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card-label">Step 3</div>
+          <h3 class="feature-card-title">
+            Test, iterate, then go live
+          </h3>
+          <p class="feature-card-body">
+            Replay real events, inspect each token, and tweak prompts safely
+            before sending traffic to production.
+          </p>
+          <div class="feature-card-tag">
+            Built-in observability
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card-label">Step 4</div>
+          <h3 class="feature-card-title">
+            Keep everything under control
+          </h3>
+          <p class="feature-card-body">
+            Set rate limits, define owners, and export logs. Stay compliant
+            while your automation runs quietly in the background.
+          </p>
+          <div class="feature-card-tag">
+            Enterprise-ready
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>© <!-- YEAR / COMPANY --> 2025 YourProduct, Inc.</div>
+      <div class="footer-links">
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#top">Status</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

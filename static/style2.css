@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    background-color: antiquewhite;
+    width: 100%;
+    height: 5vh;
+    display: grid;
+    grid-template-columns: 30px [ini] max-content [mid1] 1fr [mid2] max-content [end] 30px;
+    grid-template-rows:  1fr;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 30px [ini] 1fr [end] 30px;
+    grid-template-rows:  30px [ini] 1fr [end] 30px;
+}
+
+.wrapped {
+    grid-column-start: ini;
+    grid-column-end: end;
+    grid-row-start: ini;
+    grid-row-end: end;
+}
+
+.teaser {
+    background-image: url("./background.png");
+    width: 100%;
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+}
+
+nav > div {
+    width: max-content;
+    height: max-content;
+    background-color: blanchedalmond;
+    text-align: center;
+    font-weight: bold;
+}
+
+.logo {
+    grid-column-start: ini;
+    grid-column-end: mid1;
+    width: 10vh;
+}
+
+.logo-mark {
+  /* keep your existing properties (size, border-radius, box-shadow, etc.) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;         /* so the image stays inside the rounded shape */
+  background: transparent;  /* optional: let your image show cleanly */
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* or 'cover' if you want it to fill fully */
+  display: block;
+}
+.nav-bar {
+    grid-column-start: mid2;
+    grid-column-end: end;
+    width: max-content;
+}
+ul {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    row-gap: 10px;
+}
+
+li {
+    margin-left: 10px;
+    margin-right: 10px;
+}
