@@ -8,296 +8,536 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="page-shell">
-    <!-- NAV -->
-    <header class="nav">
-      <div class="nav-left">
-        <div class="logo-mark">
-          <!-- Replace with your initials or logo letter -->
-          <img 
-            src="{{ url_for('static', filename='logo_avince_purple.png') }}"
-            alt="Avince logo"
-            class="logo-img"
-          >
+    <div class="page-shell">
+        <!-- NAV -->
+        <header class="nav">
+        <div class="nav-left">
+            <div class="logo-mark">
+            <!-- Replace with your initials or logo letter -->
+            <img 
+                src="{{ url_for('static', filename='logo_avince.png') }}"
+                alt="Avince logo"
+                class="logo-img"
+            >
+            </div>
+            <div class="logo-text">
+            <div class="logo-text-main">
+                <!-- COMPANY NAME -->
+                AVINCE
+            </div>
+            </div>
         </div>
-        <div class="logo-text">
-          <div class="logo-text-main">
-            <!-- COMPANY NAME -->
-            AVINCE
-          </div>
-          <div class="logo-text-sub">
-            <!-- SMALL TAGLINE -->
-            Creating immersive experiences.
-          </div>
-        </div>
-      </div>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#features">Features</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#faq">FAQs</a>
+        </nav>
 
-      <div class="nav-cta">
-        <div class="nav-pill">
-          <span class="nav-pill-dot"></span>
-          Live in under 5 minutes
+        <div class="nav-cta">
+            <button class="nav-button">
+            Get started
+            </button>
         </div>
-        <button class="nav-button">
-          Get started
-        </button>
-      </div>
-    </header>
+        </header>
 
         <!-- HERO WITH BACKGROUND IMAGE -->
     <main class="main-grid">
-    <!-- Background image layer -->
-    <div class="hero-bg" aria-hidden="true">
-        <img
-        src="{{ url_for('static', filename='vr-hero.png') }}"
-        alt=""
-        class="hero-bg-image"
-        >
-        <div class="hero-bg-gradient"></div>
-        <div class="hero-spotlight"></div>
-    </div>
-
-    <!-- Foreground content (your existing hero text) -->
-    <section class="hero">
-        <div class="hero-pill">
-        <span class="hero-pill-label">New</span>
-        Be the first one to spatialize your event
+        <!-- Background image layer -->
+        <div class="hero-bg" aria-hidden="true">
+            <img
+            src="{{ url_for('static', filename='vr-hero.png') }}"
+            alt=""
+            class="hero-bg-image"
+            >
+            <div class="hero-bg-gradient"></div>
+            <div class="hero-spotlight"></div>
         </div>
 
-        <h1 class="hero-heading">
-        <span class="hero-heading-main">
-            Future of Immersive
-        </span>
-        <span class="hero-heading-accent">
-            Entertainment
-        </span>
-        </h1>
+        <!-- Foreground content (your existing hero text) -->
+        <section class="hero">
+            <div class="hero-pill">
+            <span class="hero-pill-label">New</span>
+            Be the first one to spatialize your event
+            </div>
 
-        <p class="hero-subtitle">
-        A platform engineered for the <strong>next generation</strong> of clubs,
-        festivals, event organizers, DJs, and producers.
-        </p>
+            <h1 class="hero-heading">
+            <span class="hero-heading-main">
+                Future of Immersive
+            </span>
+            <span class="hero-heading-accent">
+                Entertainment
+            </span>
+            </h1>
 
-        <div class="hero-actions">
-        <button class="hero-main-cta">
-            <span>Join the waitlist</span>
-            <span class="icon">↗</span>
-        </button>
+            <p class="hero-subtitle">
+            A platform engineered for the <strong>next generation</strong> of clubs,
+            festivals, venues, DJs, and artists.
+            </p>
 
-        <button class="hero-secondary-cta">
-            <span class="hero-secondary-cta-dot"></span>
-            <span>Contact for more information</span>
-        </button>
-        </div>
-
-        <div class="hero-metadata">
-        <div class="hero-metadata-item">
-            <span class="hero-metadata-dot"></span>
-            No credit card required
-        </div>
-        <div class="hero-metadata-item">
-            <span class="hero-metadata-dot"></span>
-            SOC2-ready infrastructure
-        </div>
-        </div>
-    </section>
+            <div class="hero-actions">
+            <button class="hero-main-cta" type="button" id="open-contact-modal">
+                <span>Get in touch</span>
+                <span class="icon">↗</span>
+            </button>
+            </div>
+            
+        </section>
     </main>
 
 
-    <!-- Partners section -->
-    <section class="partners-strip" id="partners">
-        <div class="partners-label">
-            SELECTED PARTNERS & VENUES
+        <!-- Partners section -->
+        <section class="partners-strip" id="partners">
+            <div class="partners-label">
+                SELECTED PARTNERS & VENUES
+            </div>
+
+            <div class="partners-row">
+                <img
+                src="{{ url_for('static', filename='apple_logo_2.png') }}"
+                alt="Apple"
+                class="partner-logo"
+                >
+                <img
+                src="{{ url_for('static', filename='coming_soon.webp') }}"
+                alt="Partner 2"
+                class="partner-logo"
+                >
+                <img
+                src="{{ url_for('static', filename='coming_soon.webp') }}"
+                alt="Partner 3"
+                class="partner-logo"
+                >
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features-section" id="features">
+        <div class="features-inner">
+            <p class="section-eyebrow">Features</p>
+            <h2 class="section-title">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </h2>
+            <p class="section-subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <div class="features-grid">
+            <article class="feature-block">
+                <h3 class="feature-title">Lorem ipsum dolor</h3>
+                <p class="feature-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                </p>
+            </article>
+
+            <article class="feature-block">
+                <h3 class="feature-title">Sit amet consectetur</h3>
+                <p class="feature-text">
+                Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper.
+                </p>
+            </article>
+
+            <article class="feature-block">
+                <h3 class="feature-title">Adipiscing elit sed</h3>
+                <p class="feature-text">
+                Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.
+                </p>
+            </article>
+            </div>
         </div>
+        </section>
 
-        <div class="partners-row">
-            <img
-            src="{{ url_for('static', filename='apple_logo_2.png') }}"
-            alt="Apple"
-            class="partner-logo"
-            >
-            <img
-            src="{{ url_for('static', filename='coming_soon.webp') }}"
-            alt="Partner 2"
-            class="partner-logo"
-            >
-            <img
-            src="{{ url_for('static', filename='coming_soon.webp') }}"
-            alt="Partner 3"
-            class="partner-logo"
-            >
-            <img
-            src="{{ url_for('static', filename='coming_soon.webp') }}"
-            alt="Partner 4"
-            class="partner-logo"
-            >
-            <img
-            src="{{ url_for('static', filename='coming_soon.webp') }}"
-            alt="Partner 5"
-            class="partner-logo"
-            >
-            <img
-            src="{{ url_for('static', filename='coming_soon.webp') }}"
-            alt="Partner 6"
-            class="partner-logo"
-            >
+        <!-- HOW IT WORKS -->
+        <section class="how-section" id="how-it-works">
+        <div class="how-inner">
+            <p class="section-eyebrow">How it works</p>
+            <h2 class="section-title">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </h2>
+
+            <div class="how-timeline">
+            <div class="how-step">
+                <div class="how-step-marker">
+                <span class="how-step-number">01</span>
+                </div>
+                <div class="how-step-body">
+                <h3 class="how-step-title">Lorem ipsum dolor</h3>
+                <p class="how-step-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                </div>
+            </div>
+
+            <div class="how-step">
+                <div class="how-step-marker">
+                <span class="how-step-number">02</span>
+                </div>
+                <div class="how-step-body">
+                <h3 class="how-step-title">Sit amet consectetur</h3>
+                <p class="how-step-text">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                </div>
+            </div>
+
+            <div class="how-step">
+                <div class="how-step-marker">
+                <span class="how-step-number">03</span>
+                </div>
+                <div class="how-step-body">
+                <h3 class="how-step-title">Adipiscing elit sed</h3>
+                <p class="how-step-text">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+                </div>
+            </div>
+            </div>
         </div>
-    </section>
+        </section>
 
-    <!-- BOTTOM FEATURE GRID -->
-    <section class="bottom-section" id="how-it-works">
-      <div class="bottom-header">
-        <div class="bottom-eyebrow">
-          Ship production-ready flows, not one-off demos
+        <!-- FAQ -->
+        <section class="faq-section" id="faq">
+        <div class="faq-inner">
+            <p class="section-eyebrow">FAQ</p>
+            <h2 class="section-title">Frequently asked questions</h2>
+            <p class="section-subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <div class="faq-grid">
+            <div class="faq-column">
+                <details class="faq-item" open>
+                <summary>Lorem ipsum dolor sit amet?</summary>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                </p>
+                </details>
+
+                <details class="faq-item">
+                <summary>Sed do eiusmod tempor incididunt?</summary>
+                <p>
+                    Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+                </p>
+                </details>
+
+                <details class="faq-item">
+                <summary>Ut enim ad minim veniam?</summary>
+                <p>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                </details>
+            </div>
+
+            <div class="faq-column">
+                <details class="faq-item">
+                <summary>Quis aute irure dolor in reprehenderit?</summary>
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+                </details>
+
+                <details class="faq-item">
+                <summary>Excepteur sint occaecat cupidatat non proident?</summary>
+                <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                </details>
+
+                <details class="faq-item">
+                <summary>Curabitur blandit tempus porttitor?</summary>
+                <p>
+                    Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla.
+                </p>
+                </details>
+            </div>
+            </div>
         </div>
-        <h2 class="bottom-title">
-          From first prompt to live workflow in under an afternoon.
-        </h2>
-        <p class="bottom-subtitle">
-          Connect your stack, define the steps, and let our orchestrator handle
-          retries, logging, and monitoring. No more “works only on my laptop”
-          prototypes.
-        </p>
-      </div>
+        </section>
 
-      <div class="bottom-grid">
-        <article class="feature-card">
-          <div class="feature-card-label">Step 1</div>
-          <h3 class="feature-card-title">
-            Map your real-world process
-          </h3>
-          <p class="feature-card-body">
-            Start from a blank canvas or a template. Describe your use case in
-            plain language and we generate the first version for you.
-          </p>
-          <div class="feature-card-tag">
-            AI-assisted setup
-          </div>
-        </article>
+        <!-- FINAL CTA -->
+        <section class="final-cta" id="contact">
+            
 
-        <article class="feature-card">
-          <div class="feature-card-label">Step 2</div>
-          <h3 class="feature-card-title">
-            Plug in your tools & data
-          </h3>
-          <p class="feature-card-body">
-            Connect CRM, ticketing, internal APIs, and more. Configure each
-            step with guardrails, validations, and fallbacks.
-          </p>
-          <div class="feature-card-tag">
-            Works with your stack
-          </div>
-        </article>
+            <img
+                src="{{ url_for('static', filename='ribbon.png') }}"
+                alt=""
+                class="final-cta-ribbon ribbon-left"
+                aria-hidden="true"
+            >
+            <img
+                src="{{ url_for('static', filename='ribbon.png') }}"
+                alt=""
+                class="final-cta-ribbon ribbon-left2"
+                aria-hidden="true"
+            >
+            <img
+                src="{{ url_for('static', filename='ribbon.png') }}"
+                alt=""
+                class="final-cta-ribbon ribbon-right"
+                aria-hidden="true"
+            >
+            <img
+                src="{{ url_for('static', filename='ribbon.png') }}"
+                alt=""
+                class="final-cta-ribbon ribbon-right2"
+                aria-hidden="true"
+            >
 
-        <article class="feature-card">
-          <div class="feature-card-label">Step 3</div>
-          <h3 class="feature-card-title">
-            Test, iterate, then go live
-          </h3>
-          <p class="feature-card-body">
-            Replay real events, inspect each token, and tweak prompts safely
-            before sending traffic to production.
-          </p>
-          <div class="feature-card-tag">
-            Built-in observability
-          </div>
-        </article>
+            <!-- spotlight layer -->
+            <div class="final-cta-spotlight" aria-hidden="true"></div>
 
-        <article class="feature-card">
-          <div class="feature-card-label">Step 4</div>
-          <h3 class="feature-card-title">
-            Keep everything under control
-          </h3>
-          <p class="feature-card-body">
-            Set rate limits, define owners, and export logs. Stay compliant
-            while your automation runs quietly in the background.
-          </p>
-          <div class="feature-card-tag">
-            Enterprise-ready
-          </div>
-        </article>
-      </div>
-    </section>
+        <div class="final-cta-inner">
+            <h2 class="final-cta-title">
+                <span class="final-cta-title-gradient">
+                    Ready to level up your event?
+                </span>
+            </h2>
 
-    <!-- FINAL CTA -->
-    <section class="final-cta" id="contact">
-        <img
-            src="{{ url_for('static', filename='ribbon.png') }}"
-            alt=""
-            class="final-cta-ribbon ribbon-left"
-            aria-hidden="true"
-        >
-        <img
-            src="{{ url_for('static', filename='ribbon.png') }}"
-            alt=""
-            class="final-cta-ribbon ribbon-left2"
-            aria-hidden="true"
-        >
-        <img
-            src="{{ url_for('static', filename='ribbon.png') }}"
-            alt=""
-            class="final-cta-ribbon ribbon-right"
-            aria-hidden="true"
-        >
-        <img
-            src="{{ url_for('static', filename='ribbon.png') }}"
-            alt=""
-            class="final-cta-ribbon ribbon-right2"
-            aria-hidden="true"
-        >
+            <p class="final-cta-subtitle">
+            Power your venue with spatialization technology. We are onboarding a limited number of flagship clubs, festivals, and event
+            spaces. Tell us about your event and we will help you design a launch that
+            feels truly immersive.
+            </p>
 
-    <div class="final-cta-inner">
-        <h2 class="final-cta-title">
-            <span class="final-cta-title-gradient">
-                Ready to light up your event?
-            </span>
-        </h2>
+            <div class="final-cta-actions">
+            <button class="final-cta-primary">
+                <span>Request information</span>
+                <span class="final-cta-icon">↗</span>
+            </button>
 
-        <p class="final-cta-subtitle">
-        Power your venue with futuristic tech and legendary vibes. We’re onboarding a limited number of flagship clubs, festivals, and event
-        spaces. Tell us about your venue and we’ll help you design a launch that
-        feels truly immersive.
-        </p>
+            <!--<button class="final-cta-secondary">
+                View demo
+            </button>-->
+            </div>
 
-        <div class="final-cta-actions">
-        <button class="final-cta-primary">
-            <span>Request information</span>
-            <span class="final-cta-icon">↗</span>
-        </button>
-
-        <button class="final-cta-secondary">
-            View demo
-        </button>
+            <div class="final-cta-meta">
+            <span class="final-cta-dot"></span>
+            <span>Based in San Francisco &amp; Costa Brava · Available worldwide</span>
+            </div>
         </div>
+        </section>
 
-        <div class="final-cta-meta">
-        <span class="final-cta-dot"></span>
-        <span>Based in San Francisco &amp; Costa Brava · Available worldwide</span>
+        <!-- FOOTER -->
+        <footer class="footer">
+        <div class="footer-left">
+            © 2025 Avince
         </div>
+        <div class="footer-right">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+        </div>
+        </footer>
     </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-    <div class="footer-left">
-        © 2025 Avince
-    </div>
-    <div class="footer-right">
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-    </div>
-    </footer>
+        <!-- CONTACT MODAL -->
+        <div class="contact-overlay" id="contact-overlay" aria-hidden="true">
+            <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+                <button class="contact-close" type="button" aria-label="Close">✕</button>
+
+                <h2 id="contact-title" class="contact-title">Tell us about your event</h2>
+                <p class="contact-intro">
+                Share a few details and we’ll get back to you with availability and next steps.
+                </p>
+
+                <form class="contact-form">
+                <div class="contact-row">
+                    <div class="contact-field">
+                    <label for="contact-name">Name</label>
+                    <input id="contact-name" type="text" required />
+                    </div>
+
+                    <div class="contact-field">
+                    <label for="contact-email">Email</label>
+                    <input id="contact-email" type="email" required />
+                    </div>
+                </div>
+
+                <div class="contact-field">
+                    <label for="contact-role">Role / company</label>
+                    <input id="contact-role" type="text" />
+                </div>
+
+                <div class="contact-field">
+                    <label for="contact-location">Venue / location</label>
+                    <input id="contact-location" type="text" />
+                </div>
+
+                <div class="contact-field">
+                    <label for="contact-message">Tell us about your event</label>
+                    <textarea id="contact-message" rows="4"></textarea>
+                </div>
+
+                <!-- reuse your neon gradient button style -->
+                <button type="submit" class="final-cta-primary contact-submit">
+                    <span>Request information</span>
+                    <span class="final-cta-icon">↗</span>
+                </button>
+                
+                </form>
+            </div>
+        </div>
 
 
 
 
-  <script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        // ==========================
+        //    SPOTLIGHT EFFECT
+        // ==========================
+        var prefersReducedMotion =
+            window.matchMedia &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        var hasFinePointer =
+            window.matchMedia &&
+            window.matchMedia("(pointer: fine)").matches;
+
+        function attachSpotlight(containerSelector, spotlightSelector) {
+            var container = document.querySelector(containerSelector);
+            var spotlight = document.querySelector(spotlightSelector);
+            if (!container || !spotlight) return;
+
+            if (prefersReducedMotion || !hasFinePointer) {
+                spotlight.style.opacity = "0";
+                return;
+            }
+
+            container.addEventListener("mousemove", function (event) {
+                var rect = container.getBoundingClientRect();
+                var x = event.clientX - rect.left;
+                var y = event.clientY - rect.top;
+
+                spotlight.style.opacity = "1";
+                spotlight.style.background =
+                "radial-gradient(" +
+                "circle at " + x + "px " + y + "px," +
+                "rgba(244, 114, 182, 0.32) 0%," +
+                "rgba(168, 85, 247, 0.18) 20%," +
+                "rgba(15, 23, 42, 0.0) 45%" +
+                ")";
+            });
+
+            container.addEventListener("mouseleave", function () {
+                spotlight.style.opacity = "0";
+            });
+        }
+
+        attachSpotlight(".main-grid", ".hero-spotlight");
+        attachSpotlight(".final-cta", ".final-cta-spotlight");
+
+        // ==========================
+        //      CONTACT MODAL
+        // ==========================
+        var openButton = document.getElementById("open-contact-modal");
+        var overlay = document.getElementById("contact-overlay");
+        var closeButton = overlay ? overlay.querySelector(".contact-close") : null;
+
+        function openModal() {
+            if (!overlay) return;
+            overlay.classList.add("is-open");
+            overlay.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            if (!overlay) return;
+            overlay.classList.remove("is-open");
+            overlay.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        if (openButton) {
+            openButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            openModal();
+            });
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            closeModal();
+            });
+        }
+
+        if (overlay) {
+            overlay.addEventListener("click", function (event) {
+            if (event.target === overlay) {
+                closeModal();
+            }
+            });
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+            closeModal();
+            }
+        });
+        });
+        </script>
+
+
+
+
+
+
+
+  <!--<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const prefersReducedMotion =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const hasFinePointer =
+        window.matchMedia &&
+        window.matchMedia("(pointer: fine)").matches;
+
+    if (prefersReducedMotion || !hasFinePointer) return;
+
+    function attachSpotlight(containerSelector, spotlightSelector, colors) {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+
+        const spotlight = container.querySelector(spotlightSelector);
+        if (!spotlight) return;
+
+        container.addEventListener("mousemove", function (event) {
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        spotlight.style.opacity = "1";
+        spotlight.style.background = `
+            radial-gradient(
+            circle at ${x}px ${y}px,
+            ${colors.inner} 0%,
+            ${colors.mid} 18%,
+            rgba(15, 23, 42, 0.0) 40%
+            )
+        `;
+        });
+
+        container.addEventListener("mouseleave", function () {
+        spotlight.style.opacity = "0";
+        });
+    }
+
+
+    attachSpotlight(".main-grid", ".hero-spotlight", {
+        inner: "rgba(244, 114, 182, 0.32)",
+        mid:   "rgba(168, 85, 247, 0.18)"
+    });
+
+
+    attachSpotlight(".final-cta", ".final-cta-spotlight", {
+        inner: "rgba(244, 114, 182, 0.32)",
+        mid:   "rgba(129, 140, 248, 0.18)"
+    });
+    });
+
+
+    
   document.addEventListener("DOMContentLoaded", function () {
     const hero = document.querySelector(".main-grid");
     if (!hero) return;
@@ -305,7 +545,7 @@
     const spotlight = hero.querySelector(".hero-spotlight");
     if (!spotlight) return;
 
-    // Respect users who prefer reduced motion
+    
     const prefersReducedMotion =
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -314,7 +554,7 @@
       window.matchMedia &&
       window.matchMedia("(pointer: fine)").matches;
 
-    // Only enable on desktop / precise pointer and if motion is ok
+    
     if (prefersReducedMotion || !hasFinePointer) return;
 
     hero.addEventListener("mousemove", function (event) {
@@ -322,10 +562,10 @@
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
 
-      // Show spotlight
+      
       spotlight.style.opacity = "1";
 
-      // Move the "light" to the cursor position
+      
       spotlight.style.background = `
         radial-gradient(
           circle at ${x}px ${y}px,
@@ -337,11 +577,10 @@
     });
 
     hero.addEventListener("mouseleave", function () {
-      // Fade out when leaving the hero
       spotlight.style.opacity = "0";
     });
   });
-</script>
+</script>-->
 
 
 </body>
