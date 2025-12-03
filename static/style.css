@@ -39,7 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  padding: 24px 16px;
+  /*padding: 24px 16px;*/
 }
 
 html {
@@ -47,10 +47,11 @@ html {
 }
 
 .page-shell {
+  box-sizing: unset;
   width: 100%;
   max-width: min(100% - 36px, var(--content-max-width));
-  border-radius: 2rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  /*border-radius: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);*/
   background: radial-gradient(circle at top, #020617, #020617f5);
   box-shadow: var(--shadow-soft);
   padding: 20px 22px 24px;

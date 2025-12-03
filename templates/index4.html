@@ -2,8 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Your Product Landing Page</title>
+  <title>AVINCE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AVINCE brings real-time spatial audio to clubs, festivals and venues using AR-controlled 3D sound that works with your existing sound system." />
+  <meta name="keywords" content="Avince, spatial audio, immersive sound, AR mixing, 3D audio, clubs, festivals, live events, immersive events, music events" />
+
+<!-- Open Graph / social -->
+  <meta property="og:title" content="AVINCE - The Future of Immersive Entertainment" />
+  <meta property="og:description" content="Spatialize your next immersive show. Map any venue and control 3D sound with AR." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avince.ai/" />
+  <meta property="og:image" content="{{ url_for('static', filename='social-card.png') }}" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AVINCE - The Future of Immersive Entertainment" />
+  <meta name="twitter:description" content="Real-time spatial audio for clubs, festivals and immersive venues, controlled with AR gestures." />
+  <meta name="twitter:image" content="{{ url_for('static', filename='social-card.png') }}" />
+
+
+  <meta name="author" content="Avince" />
   <!-- Flask static CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -36,7 +54,7 @@
 
         <div class="nav-cta">
             <button class="nav-button">
-            Get started
+            Get in touch
             </button>
         </div>
         </header>
@@ -58,7 +76,7 @@
         <section class="hero">
             <div class="hero-pill">
             <span class="hero-pill-label">New</span>
-            Be the first one to spatialize your event
+            Spatialize your next immersive show
             </div>
 
             <h1 class="hero-heading">
@@ -116,31 +134,37 @@
         <div class="features-inner">
             <p class="section-eyebrow">Features</p>
             <h2 class="section-title">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Spatialize your next immersive show.
             </h2>
             <p class="section-subtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            AVINCE turns any club, festival or venue into a 3D sound space, mapping the room,
+            routing your speakers and letting you move sound objects in real time to create an immersive envelop around your audience.</p>
 
             <div class="features-grid">
             <article class="feature-block">
-                <h3 class="feature-title">Lorem ipsum dolor</h3>
+                <h3 class="feature-title">Map any room in minutes</h3>
                 <p class="feature-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                Our system is adaptable to any layouts and calibrates to arbitrary loudspeaker
+                configurations, so you get consistent 3D coverage using the speakers you
+                already have.
                 </p>
             </article>
 
             <article class="feature-block">
-                <h3 class="feature-title">Sit amet consectetur</h3>
+                <h3 class="feature-title">Gesture-based mixing in AR</h3>
                 <p class="feature-text">
-                Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper.
+                Operators control the mix with intuitive hand gestures in AR, grabbing and
+                moving sound sources directly in 3D while hearing the result instantly as it
+                moves through the room.
                 </p>
             </article>
 
             <article class="feature-block">
-                <h3 class="feature-title">Adipiscing elit sed</h3>
+                <h3 class="feature-title">Layered spatial sound</h3>
                 <p class="feature-text">
-                Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.
+                Even standard stereo or mono material becomes immersive. AVINCE separates
+                your tracks into placeable elements so existing sets
+                transform into full 3D experiences.
                 </p>
             </article>
             </div>
@@ -152,7 +176,7 @@
         <div class="how-inner">
             <p class="section-eyebrow">How it works</p>
             <h2 class="section-title">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            From mono/stereo rig to 3D venue in three steps.
             </h2>
 
             <div class="how-timeline">
@@ -161,9 +185,10 @@
                 <span class="how-step-number">01</span>
                 </div>
                 <div class="how-step-body">
-                <h3 class="how-step-title">Lorem ipsum dolor</h3>
+                <h3 class="how-step-title">Map and calibrate your venue</h3>
                 <p class="how-step-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    We map your room geometry and loudspeaker layout, then automatically
+                    tune the system for optimal 3D coverage over your existing sound system.
                 </p>
                 </div>
             </div>
@@ -173,9 +198,10 @@
                 <span class="how-step-number">02</span>
                 </div>
                 <div class="how-step-body">
-                <h3 class="how-step-title">Sit amet consectetur</h3>
+                <h3 class="how-step-title">Connect your audio sources</h3>
                 <p class="how-step-text">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Route decks, mixers, and audio channels into AVINCE. Keep your familiar workflow: 
+                    AVINCE simply adds a spatial layer on top.
                 </p>
                 </div>
             </div>
@@ -185,9 +211,11 @@
                 <span class="how-step-number">03</span>
                 </div>
                 <div class="how-step-body">
-                <h3 class="how-step-title">Adipiscing elit sed</h3>
+                <h3 class="how-step-title">Perform and mix in 3D</h3>
                 <p class="how-step-text">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    DJs and engineers control spatial trajectories live with AR gestures while
+                    our renderer distributes sound across the room in real time, so the
+                    audience hears the set wrap around them.
                 </p>
                 </div>
             </div>
@@ -200,53 +228,60 @@
         <div class="faq-inner">
             <p class="section-eyebrow">FAQ</p>
             <h2 class="section-title">Frequently asked questions</h2>
-            <p class="section-subtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <!--<p class="section-subtitle">
+            Short answers to the most common questions about bringing AVINCE to your club,
+            festival or immersive venue.
+            </p>-->
 
             <div class="faq-grid">
             <div class="faq-column">
                 <details class="faq-item" open>
-                <summary>Lorem ipsum dolor sit amet?</summary>
+                <summary>What is AVINCE?</summary>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                    AVINCE is a spatial audio platform for live events. We map your venue,
+                    connect to your existing sound system and let operators control 3D sound
+                    in real time using an intuitive AR interface running on Apple Vision Pro.
                 </p>
                 </details>
 
                 <details class="faq-item">
-                <summary>Sed do eiusmod tempor incididunt?</summary>
+                <summary>Do we need to rebuild our sound system?</summary>
                 <p>
-                    Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+                    Not if each of your speakers has an independent audio channel. 
+                    AVINCE is designed to work with the loudspeakers you already have.
+                    We support arbitrary loudspeaker configurations and handle the routing
+                    and rendering so you can upgrade to spatial audio without rebuilding
+                    the room.
                 </p>
                 </details>
 
                 <details class="faq-item">
-                <summary>Ut enim ad minim veniam?</summary>
+                <summary>Who is AVINCE for?</summary>
                 <p>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    We focus on clubs, festivals, concert halls and immersive art spaces
+                    that want to differentiate their experience, as well as DJs and live
+                    electronic performers looking to push their sets into true 3D.
                 </p>
                 </details>
             </div>
 
             <div class="faq-column">
                 <details class="faq-item">
-                <summary>Quis aute irure dolor in reprehenderit?</summary>
+                <summary>Does AVINCE introduce latency?</summary>
                 <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    AVINCE is built for real-time performance. The system is engineered to
+                    keep latency imperceptible for DJs and live acts, so what you do on the
+                    mixer translates instantly into the room.
                 </p>
                 </details>
 
                 <details class="faq-item">
-                <summary>Excepteur sint occaecat cupidatat non proident?</summary>
+                <summary>How do we join the beta or book a pilot?</summary>
                 <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                </details>
-
-                <details class="faq-item">
-                <summary>Curabitur blandit tempus porttitor?</summary>
-                <p>
-                    Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla.
+                    We are onboarding a limited number of flagship venues and festivals.
+                    Share details about your space and upcoming events through the contact
+                    form, and we will follow up with availability, technical requirements and
+                    next steps.
                 </p>
                 </details>
             </div>
