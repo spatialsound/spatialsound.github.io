@@ -51,8 +51,9 @@ html {
   width: 100%;
   max-width: min(100% - 36px, var(--content-max-width));
   /*border-radius: 2rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);*/
-  background: radial-gradient(circle at top, #020617, #020617f5);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: radial-gradient(circle at top, #000000, #020617f5);*/
+  background: #000;
   box-shadow: var(--shadow-soft);
   padding: 20px 22px 24px;
   backdrop-filter: blur(20px);
@@ -204,11 +205,12 @@ html {
 }
 
 .nav-button:hover {
-  transform: translateY(-1px);
   filter: brightness(1.03);
+  /*
   box-shadow:
     0 20px 55px rgba(88, 28, 135, 0.9),
     0 0 0 1px rgba(168, 85, 247, 0.9);
+  */
 }
 
 @media (min-width: 768px) {
@@ -226,7 +228,7 @@ html {
   padding: 40px 32px 44px;
   overflow: hidden;
   border-radius: 1.5rem; 
-  min-height: 680px;
+  min-height: 80vh;
   /*
   display: grid;
   grid-template-columns: minmax(0, 1.13fr) minmax(0, 0.87fr);
@@ -247,7 +249,7 @@ html {
   position: relative;
   z-index: 1;            /* sits above the background image */
   max-width: 720px;
-  height: 540px;
+  height: 420px;
   /*
   display: flex;
   flex-direction: column;
@@ -448,6 +450,7 @@ html {
   inset: 0;              /* fills the whole hero area */
   overflow: hidden;
   z-index: 0;
+  height: 100%;
 }
 
 /* The image itself – bigger, anchored to the right */
@@ -460,6 +463,16 @@ html {
   filter: saturate(1.05);
 }
 
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* like background-size: cover */
+  object-position: center;
+  z-index: 0;
+}
+
 /* Soft black-to-transparent gradient so the left side is calm for text */
 .hero-bg-gradient {
   position: absolute;
@@ -469,8 +482,8 @@ html {
       90deg,
       rgba(2, 6, 23, 0.98) 0%,     /* almost black on the far left */
       rgba(2, 6, 23, 0.90) 28%,
-      rgba(2, 6, 23, 0.45) 60%,
-      rgba(2, 6, 23, 0.00) 100%    /* fully transparent over the right side */
+      rgba(2, 6, 23, 0.45) 58%,
+      rgba(2, 6, 23, 0.00) 88%    /* fully transparent over the right side */
     );
   pointer-events: none;
 }
@@ -1614,8 +1627,9 @@ html {
   border-radius: 22px;
   padding: 24px 24px 22px;
 
-  /* closer to your cards / sections */
-  background: rgba(15, 23, 42, 0.96);
+  /* closer to your cards / sections
+  background: rgba(15, 23, 42, 0.96);*/
+  background: #000;
   border: 1px solid rgba(148, 163, 184, 0.35);
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.9);
   overflow: hidden;
@@ -1782,3 +1796,533 @@ html {
     text-align: center;
   }
 }
+/* =========================
+   REWORK: FEATURES / HOW / FAQ
+   Paste at end to override
+   ========================= */
+
+.section-shell {
+  margin-top: 56px; /* was 72px */
+  padding: clamp(26px, 2.6vw, 44px);
+  border-radius: 24px;
+}
+
+/* Big, simple hierarchy */
+.kicker {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.85);
+  margin-bottom: 12px;
+}
+
+.section-display {
+  font-size: clamp(38px, 3.2vw + 14px, 64px);
+  line-height: 1.03;
+  letter-spacing: -0.05em;
+  margin: 0 0 12px;
+}
+
+.section-lead {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+/* Head layout: left big copy + right compact aside */
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(18px, 2.2vw, 32px);
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.section-aside {
+  border-left: 1px solid rgba(148, 163, 184, 0.18);
+  padding-left: clamp(14px, 1.8vw, 24px);
+  display: grid;
+  gap: 14px;
+}
+
+.aside-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  color: rgba(148, 163, 184, 0.9);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.aside-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-soft);
+  margin-right: 10px;
+  transform: translateY(-1px);
+}
+
+.aside-link {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 13px;
+  width: fit-content;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  padding-bottom: 2px;
+}
+.aside-link:hover {
+  border-bottom-color: rgba(248, 250, 252, 0.85);
+}
+
+.aside-stat {
+  display: grid;
+  gap: 6px;
+}
+.aside-stat-big {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.aside-stat-small,
+.aside-small {
+  font-size: 13px;
+  color: rgba(148, 163, 184, 0.9);
+  line-height: 1.6;
+}
+
+/* Cards: denser, less “blocky”, fills width */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mini-card {
+  border-radius: 18px;
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.98));
+  padding: 16px 16px 18px;
+}
+
+.mini-card-title {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.mini-card-text {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(148, 163, 184, 0.92);
+}
+
+/* Steps: clean 3-up row */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.step-card {
+  border-radius: 18px;
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.99));
+  padding: 16px 16px 18px;
+}
+
+.step-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.step-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0b1020;
+  background: radial-gradient(circle at top, #a855f7, #6366f1);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
+}
+
+.step-title {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.step-text {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(148, 163, 184, 0.92);
+}
+
+/* FAQ: single clean list that can go 2 columns without feeling crowded */
+.faq-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 22px;
+  align-items: start;
+}
+
+.faq-col{
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.faq-row {
+  border-radius: 16px;
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.99));
+  padding: 12px 14px;
+  align-self: start;
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.faq-row summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 520;
+  color: #e5e7eb;
+}
+.faq-row summary::-webkit-details-marker { display: none; }
+
+.faq-row summary::after {
+  content: "+";
+  font-size: 16px;
+  color: rgba(148, 163, 184, 0.9);
+}
+.faq-row[open] summary::after {
+  content: "–";
+  color: rgba(248, 250, 252, 1);
+}
+.faq-row[open] {
+  border-color: rgb(169, 85, 247);
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 247, 0.70) inset,  /* inner crisp line */
+    0 0 0 1px rgba(168, 85, 247, 0.20),        /* outer ring */
+    0 0 26px rgba(168, 85, 247, 0.32);         /* glow */
+}
+
+.faq-row p {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(148, 163, 184, 0.92);
+}
+
+/* FAQ: smooth open/close every time (JS drives height) */
+.faq-answer{
+  height: 0;
+  overflow: hidden;
+  transition: height 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* fade/slide the text */
+.faq-answer p{
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+/* open state */
+.faq-row[open] .faq-answer p{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .faq-answer,
+  .faq-answer p{
+    transition: none;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 960px) {
+  .section-head {
+    grid-template-columns: 1fr;
+  }
+  .section-aside {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.14);
+    padding-top: 14px;
+  }
+  .cards-grid,
+  .steps-grid,
+  .faq-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   TUNING PASS (v2)
+   - titles a bit smaller
+   - body a bit bigger
+   - subtle color lift (not loud)
+   ========================= */
+
+/* 1) TYPE SCALE */
+.section-display{
+  font-size: clamp(30px, 2.1vw + 12px, 54px);
+  line-height: 1.06;
+  color: rgba(248, 250, 252, 0.96);
+}
+
+.section-lead{
+  max-width: none;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(203, 213, 225, 0.78);
+}
+
+/* Cards text up a notch */
+.mini-card-title,
+.step-title{
+  font-size: 17px;
+}
+
+.mini-card-text,
+.step-text,
+.faq-row p{
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(203, 213, 225, 0.74);
+}
+
+/* FAQ questions slightly bigger */
+.faq-row summary{
+  font-size: 16px;
+}
+
+/* 2) COLOR / DEPTH (minimal) */
+/* Give each section a slightly “richer” surface so it doesn’t feel flat */
+.section-shell{
+  background:
+    radial-gradient(circle at 14% 0%, rgba(168,85,247,0.20), transparent 58%),
+    radial-gradient(circle at 85% 10%, rgba(99,102,241,0.12), transparent 60%),
+    linear-gradient(180deg, rgba(15,23,42,0.62), rgba(15,23,42,0.92));
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+/* Make cards slightly lighter + cleaner borders */
+.mini-card,
+.step-card,
+.faq-row{
+  border-color: rgba(148, 163, 184, 0.18);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(99,102,241,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(2,6,23,0.35), rgba(15,23,42,0.88));
+}
+
+/* Accents: switch from single purple to purple→cyan for “tech” feel */
+.aside-dot{
+  background: linear-gradient(135deg, rgba(168,85,247,1), rgba(34,211,238,0.95));
+  box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.10);
+}
+
+/* Step number badge: calmer but more interesting */
+.step-num{
+  color: rgba(2,6,23,0.92);
+  background: linear-gradient(135deg, rgba(168,85,247,1), rgba(99,102,241,0.95), rgba(34,211,238,0.85));
+  box-shadow: 0 0 22px rgba(99, 102, 241, 0.28);
+}
+
+
+
+/* =========================
+   FEATURES v3 (3-col layout)
+   ========================= */
+
+.features-v3 .features-head{
+  margin-bottom: 18px;
+  max-width: none;
+}
+
+.features-v3 .features-layout{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* middle column stack */
+.features-v3 .feat-stack{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.features-v3 .feat-stack .feat-card{
+  flex: 1;            /* makes the two middle cards share height */
+  min-height: 0;
+}
+
+.features-v3 .feat-card{
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(99,102,241,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(2,6,23,0.38), rgba(15,23,42,0.90));
+  padding: 16px 16px 18px;
+}
+
+.features-v3 .feat-card--tall{
+  display: flex;
+  flex-direction: column;
+}
+
+/* top row */
+.features-v3 .feat-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.features-v3 .feat-pill{
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(203, 213, 225, 0.85);
+  background: rgba(168, 85, 247, 0.10);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.features-v3 .feat-title{
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  color: rgba(248, 250, 252, 0.96);
+}
+
+.features-v3 .feat-text{
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(203, 213, 225, 0.74);
+  margin: 0;
+}
+
+.features-v3 .feat-bullets{
+  margin: 14px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: rgba(203, 213, 225, 0.72);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.features-v3 .feat-card--tall .feat-bullets{
+  margin-top: auto; /* pushes bullets toward bottom to fill space nicely */
+}
+
+/* responsive */
+@media (max-width: 960px){
+  .features-v3 .features-layout{
+    grid-template-columns: 1fr;
+  }
+  .features-v3 .feat-stack{
+    height: auto;
+  }
+  .features-v3 .feat-stack .feat-card{
+    flex: initial;
+  }
+}
+
+
+/* FEATURES v3 density fix */
+.features-v3 .feat-card--tall .feat-bullets{
+  margin-top: 14px;   /* was auto */
+}
+
+.features-v3 .feat-note{
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(203, 213, 225, 0.70);
+  max-width: 60ch;
+}
+
+/* Orange pills — medium punch */
+.features-v3 .feat-pill{
+  color: rgba(251, 213, 255, 0.95);
+  background: rgba(245, 22, 249, 0.22);
+  border: 1px solid rgba(249, 22, 249, 0.55);
+  box-shadow:
+    0 8px 22px rgba(196, 22, 249, 0.18),
+    0 0 0 5px rgba(222, 22, 249, 0.1);
+}
+
+/* Features title: white -> orange gradient */
+.features-v3 .section-display{
+  background: linear-gradient(90deg,
+    rgba(248, 250, 252, 0.98) 0%,
+    rgba(241, 200, 252, 0.98) 25%,
+    rgba(234, 22, 249, 0.98) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Make FAQ match Features "section-shell" spacing + look */
+.faq-section{
+  margin-top: 56px; /* same as .section-shell */
+  padding: clamp(26px, 2.6vw, 44px);
+  border-radius: 24px;
+
+  /* same shell look (no extra special FAQ styling) */
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(168,85,247,0.20), transparent 58%),
+    radial-gradient(circle at 85% 10%, rgba(99,102,241,0.12), transparent 60%),
+    linear-gradient(180deg, rgba(15,23,42,0.62), rgba(15,23,42,0.92));
+  box-shadow: none;
+}
+
+/* If you removed the right-side aside, make the header single-column */
+#faq .section-head{
+  grid-template-columns: 1fr;
+  margin-bottom: 18px; /* matches Features pacing */
+}
+
+/* This is the “missing margin” between intro text and the list */
+#faq .faq-columns{
+  margin-top: 18px;
+}
+
+/* Ribbons: stop keyframe looping, JS will drive motion */
+.final-cta-ribbon{
+  animation: none !important;
+  will-change: transform;
+  transform-origin: 50% 50%;
+}
+
+/* Base pose (static) */
+.ribbon-left  { transform: scale(1.6) rotate(145deg); }
+.ribbon-left2 { transform: scale(1.4) rotate(-52deg); }
+.ribbon-right { transform: scale(1.6) rotate(356deg); }
+.ribbon-right2{ transform: scale(1.5) rotate(-337deg); }

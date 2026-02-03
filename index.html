@@ -42,8 +42,8 @@
 
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#features">Features</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#faq">FAQs</a>
+         <!--<a href="#how-it-works">How it works</a>-->
+        <a href="#faq">FAQ</a>
       </nav>
 
       <div class="nav-cta">
@@ -57,21 +57,16 @@
     <main class="main-grid">
       <!-- Background image layer -->
       <div class="hero-bg" aria-hidden="true">
-        <img
-          src="static/vr-hero.png"
-          alt=""
-          class="hero-bg-image"
-        >
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="static/vr-hero.mp4" type="video/mp4" />
+        </video>
+
         <div class="hero-bg-gradient"></div>
         <div class="hero-spotlight"></div>
       </div>
 
       <!-- Foreground content -->
       <section class="hero">
-        <div class="hero-pill">
-          <span class="hero-pill-label">New</span>
-          Spatialize your next immersive show
-        </div>
 
         <h1 class="hero-heading">
           <span class="hero-heading-main">Future of Immersive</span>
@@ -93,162 +88,212 @@
     </main>
 
     <!-- Partners section -->
-    <!--<section class="partners-strip" id="partners">
+    <section class="partners-strip" id="partners">
       <div class="partners-label">SELECTED PARTNERS & VENUES</div>
 
       <div class="partners-row">
-        <img src="static/apple_logo_2.png" alt="Apple" class="partner-logo">
+        <img src="static/apple_logo.png" alt="Apple" class="partner-logo">
         <img src="static/coming_soon.webp" alt="Partner 2" class="partner-logo">
         <img src="static/coming_soon.webp" alt="Partner 3" class="partner-logo">
       </div>
-    </section>-->
+    </section>
 
     <!-- FEATURES -->
-    <section class="features-section" id="features">
-      <div class="features-inner">
-        <p class="section-eyebrow">Features</p>
-        <h2 class="section-title">Spatialize your next immersive show.</h2>
-        <p class="section-subtitle">
-          AVINCE turns any club, festival or venue into a 3D sound space, mapping the room,
-          routing your speakers and letting you move sound objects in real time to create an immersive envelop around your audience.
+    <section id="features" class="features-section section-shell features-v3">
+      <div class="features-head">
+        <div class="kicker">Features</div>
+        <h2 class="section-display">Spatial sound that feels obvious.</h2>
+        <p class="section-lead">
+          AVINCE turns any club, festival, or venue into a 3D sound space by mapping the room, routing speakers, and letting you move sound objects in real time so the audience is fully wrapped in the mix.
         </p>
+      </div>
 
-        <div class="features-grid">
-          <article class="feature-block">
-            <h3 class="feature-title">Map any room in minutes</h3>
-            <p class="feature-text">
-              Our system is adaptable to any layouts and calibrates to arbitrary loudspeaker
-              configurations, so you get consistent 3D coverage using the speakers you
-              already have.
+      <div class="features-layout">
+        <!-- LEFT (tall) -->
+        <article class="feat-card feat-card--tall">
+          <div class="feat-top">
+            <span class="feat-pill">Setup</span>
+          </div>
+          <h3 class="feat-title">Map any room in minutes</h3>
+          <p class="feat-text">
+            Capture the space and speaker positions. Calibrate to arbitrary layouts and save
+            presets per venue.
+          </p>
+          <p class="feat-note">
+            Setup once, then mix live: some objects you drive by hand, others run on AI paths.
+          </p>
+          <ul class="feat-bullets">
+            <li>Works with existing rigs</li>
+            <li>Fast calibration for any layout</li>
+            <li>Reusable presets per venue</li>
+          </ul>
+        </article>
+
+        <!-- MIDDLE (two stacked) -->
+        <div class="feat-stack">
+          <article class="feat-card">
+            <div class="feat-top">
+              <span class="feat-pill">AR control</span>
+            </div>
+            <h3 class="feat-title">Gesture-based mixing</h3>
+            <p class="feat-text">
+              Use an AR headset to grab and move sound objects in 3D with simple,
+              learnable gestures.
             </p>
           </article>
 
-          <article class="feature-block">
-            <h3 class="feature-title">Gesture-based mixing in AR</h3>
-            <p class="feature-text">
-              Operators control the mix with intuitive hand gestures in AR, grabbing and
-              moving sound sources directly in 3D while hearing the result instantly as it
-              moves through the room.
-            </p>
-          </article>
-
-          <article class="feature-block">
-            <h3 class="feature-title">Layered spatial sound</h3>
-            <p class="feature-text">
-              Even standard stereo or mono material becomes immersive. AVINCE separates
-              your tracks into placeable elements so existing sets
-              transform into full 3D experiences.
+          <article class="feat-card">
+            <div class="feat-top">
+              <span class="feat-pill">AI automation</span>
+            </div>
+            <h3 class="feat-title">Automated paths</h3>
+            <p class="feat-text">
+              Let AVINCE generate smooth trajectories that fit the venue and the music —
+              then tweak live if you want.
             </p>
           </article>
         </div>
+
+        <!-- RIGHT (tall) -->
+        <article class="feat-card feat-card--tall">
+          <div class="feat-top">
+            <span class="feat-pill">Sound</span>
+          </div>
+          <h3 class="feat-title">Layered spatial sound</h3>
+          <p class="feat-text">
+            Even stereo or mono material becomes immersive. Split tracks into placeable
+            elements for depth, motion, and clarity.
+          </p>
+          <p class="feat-note">
+            Choose what stays manual and what gets automated — both play together in the same scene.
+          </p>
+
+          <ul class="feat-bullets">
+            <li>Place elements in space</li>
+            <li>Automate motion per stem</li>
+            <li>Save scenes per track</li>
+          </ul>
+
+        </article>
       </div>
     </section>
+
 
     <!-- HOW IT WORKS -->
-    <section class="how-section" id="how-it-works">
-      <div class="how-inner">
-        <p class="section-eyebrow">How it works</p>
-        <h2 class="section-title">From mono/stereo rig to 3D venue in three steps.</h2>
+    <!-- <section id="how" class="how-section section-shell">
+      <div class="section-head">
+        <div class="section-head-left">
+          <div class="kicker">How it works</div>
+          <h2 class="section-display">From stereo to 3D in three steps.</h2>
+          <p class="section-lead">
+            A clean workflow: setup once, then perform like you already do — just in 3D.
+          </p>
+        </div>
 
-        <div class="how-timeline">
-          <div class="how-step">
-            <div class="how-step-marker"><span class="how-step-number">01</span></div>
-            <div class="how-step-body">
-              <h3 class="how-step-title">Map and calibrate your venue</h3>
-              <p class="how-step-text">
-                We map your room geometry and loudspeaker layout, then automatically
-                tune the system for optimal 3D coverage over your existing sound system.
-              </p>
-            </div>
-          </div>
-
-          <div class="how-step">
-            <div class="how-step-marker"><span class="how-step-number">02</span></div>
-            <div class="how-step-body">
-              <h3 class="how-step-title">Connect your audio sources</h3>
-              <p class="how-step-text">
-                Route decks, mixers, and audio channels into AVINCE. Keep your familiar workflow:
-                AVINCE simply adds a spatial layer on top.
-              </p>
-            </div>
-          </div>
-
-          <div class="how-step">
-            <div class="how-step-marker"><span class="how-step-number">03</span></div>
-            <div class="how-step-body">
-              <h3 class="how-step-title">Perform and mix in 3D</h3>
-              <p class="how-step-text">
-                DJs and engineers control spatial trajectories live with AR gestures while
-                our renderer distributes sound across the room in real time, so the
-                audience hears the set wrap around them.
-              </p>
-            </div>
+        <div class="section-head-right section-aside">
+          <div class="aside-stat">
+            <div class="aside-stat-big">01–03</div>
+            <div class="aside-stat-small">No extra complexity. Just a better space.</div>
           </div>
         </div>
       </div>
-    </section>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Map the venue</h3>
+          </div>
+          <p class="step-text">Import or scan your layout, then place speakers and key boundaries.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Calibrate</h3>
+          </div>
+          <p class="step-text">Run a quick check to align routing and coverage for the room.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Perform in 3D</h3>
+          </div>
+          <p class="step-text">Move sound objects live. Automate motion. Save scenes per track.</p>
+        </div>
+      </div>
+    </section>-->
 
     <!-- FAQ -->
-    <section class="faq-section" id="faq">
-      <div class="faq-inner">
-        <p class="section-eyebrow">FAQ</p>
-        <h2 class="section-title">Frequently asked questions</h2>
+    <section id="faq" class="faq-section section-shell">
+      <div class="features-head">
+          <div class="kicker">FAQ</div>
+          <h2 class="section-display">Have questions?</h2>
+          <p class="section-lead">If you still have questions, feel free to reach out and we’ll help you figure out what fits your venue.</p>
+      </div>
 
-        <div class="faq-grid">
-          <div class="faq-column">
-            <details class="faq-item" open>
-              <summary>What is AVINCE?</summary>
+      <div class="faq-columns">
+        <div class="faq-col">
+          <details class="faq-row">
+            <summary>What is AVINCE?</summary>
+            <div class="faq-answer">
               <p>
-                AVINCE is a spatial audio platform for live events. We map your venue,
-                connect to your existing sound system and let operators control 3D sound
-                in real time using an intuitive AR interface running on Apple Vision Pro.
+                AVINCE is a spatial audio platform for live events. We map your venue, connect to your existing sound system and let operators control 3D sound in real time using an intuitive AR interface running on Apple Vision Pro.
               </p>
-            </details>
+            </div>
+          </details>
 
-            <details class="faq-item">
-              <summary>Do we need to rebuild our sound system?</summary>
+          <details class="faq-row">
+            <summary>Do we need to rebuild our sound system?</summary>
+            <div class="faq-answer">
               <p>
-                Not if each of your speakers has an independent audio channel.
-                AVINCE is designed to work with the loudspeakers you already have.
-                We support arbitrary loudspeaker configurations and handle the routing
-                and rendering so you can upgrade to spatial audio without rebuilding
-                the room.
+                Not if each of your speakers has an independent audio channel. AVINCE is designed to work with the loudspeakers you already have. We support arbitrary loudspeaker configurations and handle the routing and rendering so you can upgrade to spatial audio without rebuilding the room.
               </p>
-            </details>
+            </div>
+          </details>
 
-            <details class="faq-item">
-              <summary>Who is AVINCE for?</summary>
+          <details class="faq-row">
+            <summary>Who is AVINCE for?</summary>
+            <div class="faq-answer">
               <p>
-                We focus on clubs, festivals, concert halls and immersive art spaces
-                that want to differentiate their experience, as well as DJs and live
-                electronic performers looking to push their sets into true 3D.
+                We focus on clubs, festivals, concert halls and immersive art spaces that want to differentiate their experience, as well as DJs and live electronic performers looking to push their sets into true 3D.
               </p>
-            </details>
-          </div>
+            </div>
+          </details>
+        </div>
 
-          <div class="faq-column">
-            <details class="faq-item">
-              <summary>Does AVINCE introduce latency?</summary>
+        <div class="faq-col">
+          <details class="faq-row">
+            <summary>Does AVINCE introduce latency?</summary>
+            <div class="faq-answer">
               <p>
-                AVINCE is built for real-time performance. The system is engineered to
-                keep latency imperceptible for DJs and live acts, so what you do on the
-                mixer translates instantly into the room.
+                AVINCE is built for real-time performance. The system is engineered to keep latency imperceptible for DJs and live acts, so what you do on the mixer translates instantly into the room.
               </p>
-            </details>
+            </div>
+          </details>
 
-            <details class="faq-item">
-              <summary>How do we join the beta or book a pilot?</summary>
+          <details class="faq-row">
+            <summary>Will the audience need headphones or an app?</summary>
+            <div class="faq-answer">
               <p>
-                We are onboarding a limited number of flagship venues and festivals.
-                Share details about your space and upcoming events through the contact
-                form, and we will follow up with availability, technical requirements and
-                next steps.
+                No. AVINCE is designed for the room, through your existing loudspeakers. The audience experiences spatial sound naturally in the space without installing anything.
               </p>
-            </details>
-          </div>
+            </div>
+          </details>
+
+          <details class="faq-row">
+            <summary>How do we join the beta or book a pilot?</summary>
+            <div class="faq-answer">
+              <p>
+                We are onboarding a limited number of flagship venues and festivals. Share details about your space and upcoming events through the contact form, and we will follow up with availability, technical requirements and next steps.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
+
 
     <!-- FINAL CTA -->
     <section class="final-cta" id="contact">
@@ -467,7 +512,176 @@
           window.location.href = "mailto:hello@avince.ai?subject=" + subject + "&body=" + body;
         });
       }
+
+      // ==========================
+      //  RIBBON "NATURAL" DRIFT
+      // ==========================
+      (function () {
+        var reduce =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduce) return;
+
+        var cta = document.querySelector(".final-cta");
+        var ribbons = Array.prototype.slice.call(
+          document.querySelectorAll(".final-cta-ribbon")
+        );
+
+        if (!cta || !ribbons.length) return;
+
+        // Store each ribbon’s base transform (matrix) after CSS overrides
+        ribbons.forEach(function (el) {
+          el.style.animation = "none";
+          var base = window.getComputedStyle(el).transform;
+          el.dataset.baseTransform = base && base !== "none" ? base : "";
+          el.dataset.seed = String(Math.random() * 1000);
+        });
+
+        var raf = null;
+        var start = 0;
+        var running = false;
+
+        function loop(now) {
+          if (!running) return;
+          if (!start) start = now;
+          var t = (now - start) / 1000;
+
+          ribbons.forEach(function (el, i) {
+            var seed = parseFloat(el.dataset.seed || "0");
+            var base = el.dataset.baseTransform || "";
+
+            // Slow “breathing” speed modulation (prevents repetitive feel)
+            var s = t * (2 + 0.20 * Math.sin(t * 0.10 + seed));
+
+            // Organic drift: sum of sines (continuous + non-loop-y)
+            var x = 8  * (Math.sin(s * 0.60 + seed) + 0.35 * Math.sin(s * 1.15 + seed * 1.7));
+            var y = 12 * (Math.sin(s * 0.45 + seed * 0.9) + 0.30 * Math.sin(s * 0.95 + seed * 1.3));
+            var r = 1.2 * (Math.sin(s * 0.35 + seed * 1.1) + 0.35 * Math.sin(s * 0.80 + seed * 0.4));
+            var sc = 1 + 0.007 * Math.sin(s * 0.55 + seed * 1.6);
+
+            // Slight variation per ribbon (so they don’t move in sync)
+            var k = 0.85 + (i * 0.08);
+            x *= k; y *= k; r *= (0.9 + i * 0.05);
+
+            el.style.transform =
+              (base ? base + " " : "") +
+              "translate3d(" + x.toFixed(2) + "px," + y.toFixed(2) + "px,0) " +
+              "rotate(" + r.toFixed(2) + "deg) " +
+              "scale(" + sc.toFixed(4) + ")";
+          });
+
+          raf = requestAnimationFrame(loop);
+        }
+
+        function startAnim() {
+          if (running) return;
+          running = true;
+          start = 0;
+          raf = requestAnimationFrame(loop);
+        }
+
+        function stopAnim() {
+          running = false;
+          if (raf) cancelAnimationFrame(raf);
+          raf = null;
+        }
+
+        // Only animate when CTA is on screen (lighter + smoother)
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) startAnim();
+                else stopAnim();
+              });
+            },
+            { threshold: 0.15 }
+          );
+          io.observe(cta);
+        } else {
+          startAnim();
+        }
+      })();
     });
   </script>
+
+  <script>
+    (() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      document.querySelectorAll('details.faq-row').forEach((d) => {
+        const summary = d.querySelector('summary');
+        const answer = d.querySelector('.faq-answer');
+        if (!summary || !answer) return;
+
+        // Init
+        answer.style.height = d.open ? 'auto' : '0px';
+
+        summary.addEventListener('click', (e) => {
+          if (reduce) {
+            d.open = !d.open;
+            answer.style.height = d.open ? 'auto' : '0px';
+            return;
+          }
+
+          e.preventDefault();
+
+          if (!d.open) {
+            // OPEN
+            d.open = true;
+            answer.style.height = '0px';
+            answer.offsetHeight; // reflow
+            answer.style.height = answer.scrollHeight + 'px';
+
+            const onEnd = (ev) => {
+              if (ev.propertyName !== 'height') return;
+              answer.style.height = 'auto';
+              answer.removeEventListener('transitionend', onEnd);
+            };
+            answer.addEventListener('transitionend', onEnd);
+          } else {
+            // CLOSE
+            answer.style.height = answer.scrollHeight + 'px';
+            answer.offsetHeight; // reflow
+            answer.style.height = '0px';
+
+            const onEnd = (ev) => {
+              if (ev.propertyName !== 'height') return;
+              d.open = false;
+              answer.removeEventListener('transitionend', onEnd);
+            };
+            answer.addEventListener('transitionend', onEnd);
+          }
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    // Close an open FAQ when clicking anywhere inside it (except the summary)
+    document.querySelectorAll('details.faq-item, details.faq-row').forEach((d) => {
+      d.addEventListener('click', (e) => {
+        if (!d.open) return;
+
+        // don't close when clicking the question/summary itself
+        if (e.target.closest('summary')) return;
+
+        // don't close if user is selecting text
+        const sel = window.getSelection?.().toString().trim();
+        if (sel) return;
+
+        // don't close if clicking interactive elements inside the answer
+        if (e.target.closest('a, button, input, textarea, select, label')) return;
+
+        // Close using summary click (so it works with your smooth animation JS too)
+        const summary = d.querySelector('summary');
+        if (summary) summary.click();
+        else d.open = false;
+      });
+    });
+  </script>
+
+
 </body>
 </html>
