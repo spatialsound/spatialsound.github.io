@@ -486,6 +486,8 @@ html {
       rgba(2, 6, 23, 0.00) 88%    /* fully transparent over the right side */
     );
   pointer-events: none;
+  height: 100%;
+  width: 100%;
 }
 
 .hero-spotlight {
@@ -1987,6 +1989,7 @@ html {
   padding: 12px 14px;
   align-self: start;
   transition: border-color 220ms ease, box-shadow 220ms ease;
+  contain: paint;
 }
 
 .faq-row summary {
@@ -2314,14 +2317,26 @@ html {
   margin-top: 18px;
 }
 
-/* Ribbons: stop keyframe looping, JS will drive motion */
-.final-cta-ribbon{
-  animation: none !important;
-  will-change: transform;
-  transform-origin: 50% 50%;
+/* =========================
+   TEMP: STATIC CTA RIBBONS (prevents flicker)
+   ========================= */
+
+/* Contain mix-blend layers inside their cards (reduces full-screen flashes) */
+.main-grid,
+.final-cta{
+  isolation: isolate;
 }
 
-/* Base pose (static) */
+/* Kill all ribbon animations (both the fast + slow duplicated ones) */
+.ribbon-left,
+.ribbon-left2,
+.ribbon-right,
+.ribbon-right2{
+  animation: none !important;
+}
+
+/* Lock them into a good-looking “rest” pose
+   (these were previously driven by keyframes / the commented static block) */
 .ribbon-left  { transform: scale(1.6) rotate(145deg); }
 .ribbon-left2 { transform: scale(1.4) rotate(-52deg); }
 .ribbon-right { transform: scale(1.6) rotate(356deg); }
