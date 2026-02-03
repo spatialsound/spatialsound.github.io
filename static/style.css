@@ -114,9 +114,14 @@ html {
   overflow: hidden;
 }
 
-.logo-img {
+.logo-mark a {
   width: 149%;
   height: 161%;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;      /* or 'cover' if you want it to fill fully */
   display: block;
 }
@@ -1273,7 +1278,7 @@ html {
 
 @media (max-width: 700px) {
   .footer {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
     align-items: flex-start;
   }
